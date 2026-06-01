@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Control Estudiantil{% endblock %}</title>
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/dashboard">Inicio</a>
+
+        <a href="#">Estudiantes</a>
+
+        <a href="#">Asignaturas</a>
+
+        <a href="#">Calificaciones</a>
+
+        <a href="/logout">Cerrar sesión</a>
+
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

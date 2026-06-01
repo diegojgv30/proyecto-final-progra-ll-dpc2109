@@ -7,11 +7,13 @@ from flask import flash
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import login_required
+from flask_login import current_user
 
 from werkzeug.security import check_password_hash
 
 from app.forms.login_form import LoginForm
 from app.models.usuario import Usuario
+from app.controllers.permisos import rol_requerido
 
 auth = Blueprint("auth", __name__)
 
@@ -50,7 +52,10 @@ def login():
 @login_required
 def dashboard():
 
-    return "Dashboard funcionando"
+    return render_template(
+        "dashboard/index.html",
+        usuario=current_user
+    )
 
 
 @auth.route("/logout")
@@ -61,3 +66,11 @@ def logout():
     return redirect(
         url_for("auth.login")
     )
+
+
+@auth.route("/solo-admin")
+@login_required
+@rol_requerido("Administrador")
+def solo_admin():
+
+    return "Area exclusiva de administradores"
