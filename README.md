@@ -315,33 +315,160 @@ git pull origin main
 
 ---
 
-# Crear rama personal
+# Creación de ramas de trabajo
 
-Cada integrante debe trabajar únicamente en su propia rama.
+Para evitar conflictos y mantener organizado el desarrollo del proyecto, cada integrante debe trabajar únicamente en su propia rama.
 
-## Persona 1
+La rama principal del proyecto es:
 
-```bash
-git checkout -b feature-auth-dashboard
+```text
+main
 ```
 
-## Persona 2
+Ningún integrante debe trabajar directamente sobre la rama `main`.
+
+---
+
+## Ramas asignadas
+
+| Integrante | Rama                        |
+| ---------- | --------------------------- |
+| Diego      | branch-integrante-diego     |
+| David      | branch-integrante-david     |
+| Alejandra  | branch-integrante-alejandra |
+| Lizzette   | branch-integrante-lizzette  |
+
+---
+
+## Crear una rama por primera vez
+
+Después de clonar el proyecto:
 
 ```bash
-git checkout -b feature-estudiantes
+git checkout main
+
+git pull origin main
 ```
 
-## Persona 3
+Crear la rama correspondiente:
+
+### Diego
 
 ```bash
-git checkout -b feature-asignaturas
+git checkout -b branch-integrante-diego
+
+git push -u origin branch-integrante-diego
 ```
 
-## Persona 4
+### David
 
 ```bash
-git checkout -b feature-calificaciones
+git checkout -b branch-integrante-david
+
+git push -u origin branch-integrante-david
 ```
+
+### Alejandra
+
+```bash
+git checkout -b branch-integrante-alejandra
+
+git push -u origin branch-integrante-alejandra
+```
+
+### Lizzette
+
+```bash
+git checkout -b branch-integrante-lizzette
+
+git push -u origin branch-integrante-lizzette
+```
+
+---
+
+## Verificar la rama actual
+
+Antes de comenzar a trabajar siempre ejecutar:
+
+```bash
+git branch
+```
+
+La rama activa aparecerá marcada con un asterisco (*).
+
+Ejemplo:
+
+```text
+* branch-integrante-david
+  main
+```
+
+---
+
+## Cambiar a la rama personal
+
+Si se encuentra en otra rama:
+
+```bash
+git checkout nombre-rama
+```
+
+Ejemplo:
+
+```bash
+git checkout branch-integrante-david
+```
+
+---
+
+## Regla importante
+
+Cada integrante debe trabajar únicamente en:
+
+* Su propia rama.
+* Sus propios archivos asignados.
+
+No debe modificar:
+
+* La rama main.
+* Las ramas de otros integrantes.
+* Los archivos protegidos definidos en esta documentación.
+
+---
+
+## Flujo de trabajo diario
+
+1. Actualizar la rama principal.
+
+```bash
+git checkout main
+
+git pull origin main
+```
+
+2. Cambiar a la rama personal.
+
+```bash
+git checkout branch-integrante-nombre
+```
+
+3. Realizar cambios.
+
+4. Guardar cambios.
+
+```bash
+git add .
+
+git commit -m "Descripcion del cambio realizado"
+```
+
+5. Subir cambios.
+
+```bash
+git push
+```
+
+6. Informar al responsable de integración cuando el módulo esté listo para revisión.
 
 ---
 
