@@ -1,4 +1,5 @@
-from app import create_app, db
+from app import create_app
+from config.database import db
 
 from app.models.rol import Rol
 from app.models.usuario import Usuario

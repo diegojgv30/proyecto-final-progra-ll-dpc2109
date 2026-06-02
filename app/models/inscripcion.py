@@ -1,4 +1,4 @@
-from app import db
+from config.database import db
 
 
 class Inscripcion(db.Model):
