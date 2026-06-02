@@ -562,11 +562,9 @@ Cuando el trabajo esté listo para revisión.
 
 # Distribución de Trabajo
 
-El proyecto está dividido en cuatro partes para facilitar el trabajo colaborativo.
+El proyecto está dividido en cuatro áreas de trabajo para garantizar una distribución equilibrada de responsabilidades y facilitar el desarrollo colaborativo mediante Git y GitHub.
 
-La asignación definitiva de módulos será realizada por el equipo.
-
-## Persona 1
+## Persona 1 (Diego)
 
 Estado actual:
 
@@ -577,11 +575,12 @@ Incluye:
 * Arquitectura general del sistema.
 * Configuración Flask.
 * Configuración de base de datos.
-* Login.
-* Dashboard.
+* Modelos SQLAlchemy.
+* Sistema de autenticación (Login y Logout).
 * Roles y permisos.
-* Integración final.
-* Resolución de conflictos Git.
+* Scripts de creación e inicialización de la base de datos.
+* Documentación del proyecto.
+* Coordinación e integración de cambios.
 
 Archivos principales:
 
@@ -605,46 +604,77 @@ GUIA_DESARROLLO.md
 
 ## Persona 2
 
-Responsable de uno de los módulos funcionales del sistema.
+Responsable del módulo de Gestión de Estudiantes.
 
-Posibles áreas:
+Actividades:
 
-* Gestión de estudiantes.
-* Gestión de asignaturas.
-* Gestión de calificaciones.
-* Reportes.
+* Listar estudiantes.
+* Crear estudiantes.
+* Editar estudiantes.
+* Eliminar estudiantes.
+* Validar formularios.
+* Integrar vistas del módulo.
 
-La asignación será definida por el equipo.
+Archivos principales:
+
+```text
+app/controllers/estudiante_controller.py
+
+app/forms/estudiante_form.py
+
+app/templates/estudiantes/
+```
 
 ---
 
 ## Persona 3
 
-Responsable de uno de los módulos funcionales del sistema.
+Responsable del módulo de Gestión de Asignaturas.
 
-Posibles áreas:
+Actividades:
 
-* Gestión de estudiantes.
-* Gestión de asignaturas.
-* Gestión de calificaciones.
-* Reportes.
+* Listar asignaturas.
+* Crear asignaturas.
+* Editar asignaturas.
+* Eliminar asignaturas.
+* Validar formularios.
+* Integrar vistas del módulo.
 
-La asignación será definida por el equipo.
+Archivos principales:
+
+```text
+app/controllers/asignatura_controller.py
+
+app/forms/asignatura_form.py
+
+app/templates/asignaturas/
+```
 
 ---
 
 ## Persona 4
 
-Responsable de uno de los módulos funcionales del sistema.
+Responsable del módulo de Gestión de Calificaciones e integración funcional.
 
-Posibles áreas:
+Actividades:
 
-* Gestión de estudiantes.
-* Gestión de asignaturas.
-* Gestión de calificaciones.
-* Reportes.
+* Registrar calificaciones.
+* Editar calificaciones.
+* Eliminar calificaciones.
+* Gestionar relaciones entre estudiantes y asignaturas.
+* Validar formularios.
+* Realizar pruebas de integración de módulos.
+* Apoyar el registro de blueprints y pruebas finales.
 
-La asignación será definida por el equipo.
+Archivos principales:
+
+```text
+app/controllers/calificacion_controller.py
+
+app/forms/calificacion_form.py
+
+app/templates/calificaciones/
+```
 
 ---
 
