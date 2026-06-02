@@ -1,12 +1,12 @@
 # Sistema de Control Estudiantil
 
-Proyecto final de Programación II desarrollado con Flask, SQLite, SQLAlchemy y Flask-Login.
+Proyecto Final de Programación II desarrollado utilizando Flask, SQLite, SQLAlchemy, Flask-Login y GitHub.
 
 ---
 
 # Descripción
 
-El Sistema de Control Estudiantil permite administrar información académica mediante una aplicación web.
+El Sistema de Control Estudiantil es una aplicación web que permite administrar información académica dentro de una institución educativa.
 
 El sistema incluye:
 
@@ -20,7 +20,7 @@ El sistema incluye:
 
 ---
 
-# Tecnologías utilizadas
+# Tecnologías Utilizadas
 
 ## Backend
 
@@ -47,23 +47,112 @@ El sistema incluye:
 
 ---
 
+# Estructura del Proyecto
+
+```text
+.
+├── app
+│   ├── controllers
+│   ├── forms
+│   ├── models
+│   ├── static
+│   └── templates
+│
+├── config
+│   ├── __init__.py
+│   ├── database.py
+│   └── settings.py
+│
+├── instance
+│   └── control_estudiantil.db
+│
+├── crear_db.py
+├── cargar_datos.py
+├── requirements.txt
+├── run.py
+├── README.md
+└── GUIA_DESARROLLO.md
+```
+
+---
+
+# Carpeta de Configuración
+
+El proyecto utiliza una carpeta denominada:
+
+```text
+config/
+```
+
+para centralizar la configuración del sistema.
+
+## settings.py
+
+Contiene la configuración general de Flask:
+
+* SECRET_KEY
+* Configuración de SQLAlchemy
+* Configuración de la conexión a la base de datos
+
+## database.py
+
+Contiene la instancia principal de SQLAlchemy utilizada por todos los modelos del sistema.
+
+Esta estructura permite separar la configuración de la lógica de negocio y sigue los estándares de desarrollo establecidos para el proyecto.
+
+---
+
+# Documentación del Proyecto
+
+Antes de comenzar a desarrollar cualquier módulo todos los integrantes deben leer:
+
+```text
+README.md
+GUIA_DESARROLLO.md
+```
+
+## README.md
+
+Contiene:
+
+* Instalación.
+* Configuración.
+* Uso del proyecto.
+* Git y GitHub.
+* Creación de ramas.
+* Solución de problemas.
+
+## GUIA_DESARROLLO.md
+
+Contiene:
+
+* Normas de desarrollo.
+* Normas de diseño.
+* Estructura del proyecto.
+* Flujo de trabajo.
+* Buenas prácticas.
+* Reglas de colaboración.
+
+---
+
 # Requisitos
 
 El proyecto puede ejecutarse en cualquiera de los siguientes entornos:
 
-* Windows 10 u 11
+* Windows 10
+* Windows 11
 * Linux
 * WSL2 (Opcional)
 
 Software requerido:
 
-* Python 3.12 o superior
-* Git
-* Visual Studio Code (Recomendado)
+* Python 3.12 o superior.
+* Git.
+* Visual Studio Code (Recomendado).
 
 ---
 
-# Verificar instalaciones
+# Verificar Instalaciones
 
 ## Windows
 
@@ -83,7 +172,7 @@ git --version
 
 ---
 
-# Clonar el proyecto
+# Clonar el Proyecto
 
 ## Windows
 
@@ -103,7 +192,7 @@ cd proyecto-final-progra-ll-dpc2109
 
 ---
 
-# Crear entorno virtual
+# Crear Entorno Virtual
 
 ## Windows
 
@@ -119,7 +208,7 @@ python3 -m venv venv
 
 ---
 
-# Activar entorno virtual
+# Activar Entorno Virtual
 
 ## Windows - PowerShell
 
@@ -139,7 +228,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-Al activarse correctamente aparecerá algo similar a:
+Si el entorno se activa correctamente aparecerá:
 
 ```text
 (venv)
@@ -149,7 +238,7 @@ al inicio de la línea de comandos.
 
 ---
 
-# Instalar dependencias
+# Instalar Dependencias
 
 ## Windows
 
@@ -171,7 +260,7 @@ pip list
 
 ---
 
-# Crear la base de datos
+# Crear la Base de Datos
 
 ## Windows
 
@@ -193,7 +282,7 @@ Base de datos creada correctamente
 
 ---
 
-# Cargar datos iniciales
+# Cargar Datos Iniciales
 
 ## Windows
 
@@ -217,7 +306,7 @@ Proceso completado
 
 ---
 
-# Usuarios de prueba
+# Usuarios de Prueba
 
 ## Administrador
 
@@ -267,7 +356,7 @@ estudiante123
 
 ---
 
-# Ejecutar el proyecto
+# Ejecutar el Proyecto
 
 ## Windows
 
@@ -287,7 +376,7 @@ Resultado esperado:
 Running on http://127.0.0.1:5000
 ```
 
-Abrir navegador:
+Abrir en el navegador:
 
 ```text
 http://127.0.0.1:5000/login
@@ -295,9 +384,9 @@ http://127.0.0.1:5000/login
 
 ---
 
-# Flujo de trabajo con Git
+# Flujo de Trabajo con Git
 
-## Actualizar proyecto antes de comenzar
+## Actualizar el Proyecto Antes de Comenzar
 
 ### Windows
 
@@ -315,9 +404,9 @@ git pull origin main
 
 ---
 
-# Creación de ramas de trabajo
+# Ramas de Trabajo
 
-Para evitar conflictos y mantener organizado el desarrollo del proyecto, cada integrante debe trabajar únicamente en su propia rama.
+Para evitar conflictos y mantener organizado el desarrollo, cada integrante debe trabajar exclusivamente en su propia rama.
 
 La rama principal del proyecto es:
 
@@ -325,11 +414,11 @@ La rama principal del proyecto es:
 main
 ```
 
-Ningún integrante debe trabajar directamente sobre la rama `main`.
+Ningún integrante debe trabajar directamente sobre la rama principal.
 
 ---
 
-## Ramas asignadas
+## Ramas Asignadas
 
 | Integrante | Rama                        |
 | ---------- | --------------------------- |
@@ -340,7 +429,7 @@ Ningún integrante debe trabajar directamente sobre la rama `main`.
 
 ---
 
-## Crear una rama por primera vez
+# Crear una Rama por Primera Vez
 
 Después de clonar el proyecto:
 
@@ -349,8 +438,6 @@ git checkout main
 
 git pull origin main
 ```
-
-Crear la rama correspondiente:
 
 ### Diego
 
@@ -386,15 +473,11 @@ git push -u origin branch-integrante-lizzette
 
 ---
 
-## Verificar la rama actual
-
-Antes de comenzar a trabajar siempre ejecutar:
+# Verificar la Rama Actual
 
 ```bash
 git branch
 ```
-
-La rama activa aparecerá marcada con un asterisco (*).
 
 Ejemplo:
 
@@ -405,9 +488,7 @@ Ejemplo:
 
 ---
 
-## Cambiar a la rama personal
-
-Si se encuentra en otra rama:
+# Cambiar a una Rama
 
 ```bash
 git checkout nombre-rama
@@ -421,24 +502,25 @@ git checkout branch-integrante-david
 
 ---
 
-## Regla importante
+# Reglas para el Uso de Ramas
 
-Cada integrante debe trabajar únicamente en:
+Cada integrante debe:
 
-* Su propia rama.
-* Sus propios archivos asignados.
+* Trabajar únicamente en su propia rama.
+* Realizar commits únicamente en su rama.
+* Subir cambios únicamente a su rama.
 
-No debe modificar:
+No debe:
 
-* La rama main.
-* Las ramas de otros integrantes.
-* Los archivos protegidos definidos en esta documentación.
+* Trabajar directamente sobre main.
+* Trabajar sobre la rama de otro integrante.
+* Realizar merge directamente a main.
 
 ---
 
-## Flujo de trabajo diario
+# Flujo de Trabajo Diario
 
-1. Actualizar la rama principal.
+## 1. Actualizar la rama principal
 
 ```bash
 git checkout main
@@ -446,15 +528,19 @@ git checkout main
 git pull origin main
 ```
 
-2. Cambiar a la rama personal.
+## 2. Cambiar a la rama personal
+
+Ejemplo:
 
 ```bash
-git checkout branch-integrante-nombre
+git checkout branch-integrante-david
 ```
 
-3. Realizar cambios.
+## 3. Realizar cambios
 
-4. Guardar cambios.
+Desarrollar las funcionalidades asignadas.
+
+## 4. Guardar cambios
 
 ```bash
 git add .
@@ -462,140 +548,126 @@ git add .
 git commit -m "Descripcion del cambio realizado"
 ```
 
-5. Subir cambios.
+## 5. Subir cambios
 
 ```bash
 git push
 ```
 
-6. Informar al responsable de integración cuando el módulo esté listo para revisión.
+## 6. Informar al responsable de integración
+
+Cuando el trabajo esté listo para revisión.
 
 ---
 
-# Guardar cambios
+# Distribución de Trabajo
 
-Verificar cambios:
+El proyecto está dividido en cuatro partes para facilitar el trabajo colaborativo.
 
-```bash
-git status
-```
-
-Agregar cambios:
-
-```bash
-git add .
-```
-
-Crear commit:
-
-```bash
-git commit -m "Descripcion del cambio realizado"
-```
-
-Subir cambios:
-
-```bash
-git push origin nombre-rama
-```
-
-Ejemplo:
-
-```bash
-git push origin feature-estudiantes
-```
-
----
-
-# Distribución de trabajo
+La asignación definitiva de módulos será realizada por el equipo.
 
 ## Persona 1
 
-Responsable de:
+Estado actual:
 
-* Arquitectura del sistema
-* Configuración Flask
-* Base de datos
-* Login
-* Dashboard
-* Roles
-* Integración final
+Esta parte ya se encuentra desarrollada.
+
+Incluye:
+
+* Arquitectura general del sistema.
+* Configuración Flask.
+* Configuración de base de datos.
+* Login.
+* Dashboard.
+* Roles y permisos.
+* Integración final.
+* Resolución de conflictos Git.
 
 Archivos principales:
 
 ```text
 app/__init__.py
-config.py
-app/controllers/auth_controller.py
-app/controllers/dashboard_controller.py
+
 app/models/
+
+config/
+├── database.py
+└── settings.py
+
+crear_db.py
+cargar_datos.py
+
+README.md
+GUIA_DESARROLLO.md
 ```
 
 ---
 
 ## Persona 2
 
-Responsable de:
+Responsable de uno de los módulos funcionales del sistema.
 
-* CRUD Estudiantes
+Posibles áreas:
 
-Archivos:
+* Gestión de estudiantes.
+* Gestión de asignaturas.
+* Gestión de calificaciones.
+* Reportes.
 
-```text
-app/controllers/estudiante_controller.py
-app/forms/estudiante_form.py
-app/templates/estudiantes/
-```
+La asignación será definida por el equipo.
 
 ---
 
 ## Persona 3
 
-Responsable de:
+Responsable de uno de los módulos funcionales del sistema.
 
-* CRUD Asignaturas
+Posibles áreas:
 
-Archivos:
+* Gestión de estudiantes.
+* Gestión de asignaturas.
+* Gestión de calificaciones.
+* Reportes.
 
-```text
-app/controllers/asignatura_controller.py
-app/forms/asignatura_form.py
-app/templates/asignaturas/
-```
+La asignación será definida por el equipo.
 
 ---
 
 ## Persona 4
 
-Responsable de:
+Responsable de uno de los módulos funcionales del sistema.
 
-* CRUD Calificaciones
-* Reportes
+Posibles áreas:
 
-Archivos:
+* Gestión de estudiantes.
+* Gestión de asignaturas.
+* Gestión de calificaciones.
+* Reportes.
 
-```text
-app/controllers/calificacion_controller.py
-app/forms/calificacion_form.py
-app/templates/calificaciones/
-```
+La asignación será definida por el equipo.
 
 ---
 
-# Archivos protegidos
+# Archivos Protegidos
 
-Los siguientes archivos no deben modificarse sin coordinación con la Persona 1:
+Los siguientes archivos no deben modificarse sin coordinación previa con el responsable de integración:
 
 ```text
 app/__init__.py
-config.py
+
 app/models/
+
+config/
+├── database.py
+├── settings.py
+
 crear_db.py
 cargar_datos.py
 ```
 
 ---
 
-# Verificación antes de subir cambios
+# Verificación Antes de Subir Cambios
 
 Ejecutar:
 
@@ -603,11 +675,12 @@ Ejecutar:
 python run.py
 ```
 
-Verificar que:
+Verificar:
 
 * El sistema inicia correctamente.
 * No existen errores en la consola.
-* Se puede acceder al login.
+* El login funciona correctamente.
+* Las páginas desarrolladas funcionan correctamente.
 
 Luego ejecutar:
 
@@ -615,21 +688,19 @@ Luego ejecutar:
 git status
 ```
 
-Debe mostrar:
+Después de realizar commit debe mostrar:
 
 ```text
 working tree clean
 ```
 
-después del commit.
-
 ---
 
-# Solución de problemas
+# Solución de Problemas
 
-## Error al crear entorno virtual en Linux o WSL
+## Error al Crear el Entorno Virtual
 
-Instalar:
+### Linux / WSL
 
 ```bash
 sudo apt update
@@ -645,9 +716,7 @@ sudo apt install python3.12-venv
 
 ---
 
-## Error de dependencias
-
-Actualizar pip:
+## Error de Dependencias
 
 ### Windows
 
@@ -661,7 +730,7 @@ python -m pip install --upgrade pip
 pip install --upgrade pip
 ```
 
-Luego:
+Instalar nuevamente:
 
 ```bash
 pip install -r requirements.txt
@@ -669,39 +738,33 @@ pip install -r requirements.txt
 
 ---
 
-## La base de datos no existe
+## La Base de Datos no Existe
 
-Ejecutar nuevamente:
+Ejecutar:
 
 ```bash
 python crear_db.py
-```
 
-Después:
-
-```bash
 python cargar_datos.py
 ```
 
 ---
 
-## Verificar la base de datos SQLite
+## Verificar SQLite
 
-### Instalar SQLite
+### Windows
 
-#### Windows
-
-Descargar desde:
+Descargar SQLite desde:
 
 https://www.sqlite.org/download.html
 
-#### Linux / WSL
+### Linux / WSL
 
 ```bash
 sudo apt install sqlite3
 ```
 
-### Abrir base de datos
+Abrir la base de datos:
 
 ```bash
 sqlite3 instance/control_estudiantil.db
@@ -727,6 +790,36 @@ Salir:
 
 ---
 
-# Objetivo final
+# Responsable de Integración
 
-Construir una aplicación web funcional que permita administrar estudiantes, asignaturas y calificaciones utilizando Flask, SQLite, SQLAlchemy, Git y GitHub, aplicando buenas prácticas de programación orientada a objetos y trabajo colaborativo.
+El responsable de integración del proyecto es:
+
+```text
+Diego
+```
+
+Responsabilidades:
+
+* Mantener estable la rama main.
+* Revisar cambios de los integrantes.
+* Resolver conflictos de Git.
+* Integrar módulos al proyecto final.
+* Aprobar modificaciones estructurales.
+
+---
+
+# Regla de Integración
+
+Ningún integrante debe realizar merge directamente sobre:
+
+```text
+main
+```
+
+Toda integración deberá ser revisada previamente por el responsable de integración.
+
+---
+
+# Objetivo Final
+
+Construir una aplicación web funcional que permita administrar estudiantes, asignaturas y calificaciones utilizando Flask, SQLite, SQLAlchemy, Git y GitHub, aplicando buenas prácticas de programación orientada a objetos, desarrollo web y trabajo colaborativo.
