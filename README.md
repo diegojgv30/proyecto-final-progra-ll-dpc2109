@@ -562,27 +562,34 @@ Cuando el trabajo esté listo para revisión.
 
 # Distribución de Trabajo
 
-El proyecto está dividido en cuatro áreas de trabajo para garantizar una distribución equilibrada de responsabilidades y facilitar el desarrollo colaborativo mediante Git y GitHub.
+El desarrollo del proyecto se ha organizado en cuatro áreas de trabajo para garantizar una distribución equilibrada de responsabilidades, facilitar el trabajo colaborativo mediante Git y GitHub, y asegurar el cumplimiento de todos los requisitos establecidos en la consigna del Proyecto Final.
 
 ## Persona 1 (Diego)
 
-Estado actual:
+### Estado actual
 
-Esta parte ya se encuentra desarrollada.
+Esta parte del proyecto ya se encuentra desarrollada.
 
-Incluye:
+### Responsabilidades
 
-* Arquitectura general del sistema.
-* Configuración Flask.
-* Configuración de base de datos.
-* Modelos SQLAlchemy.
-* Sistema de autenticación (Login y Logout).
-* Roles y permisos.
+* Análisis inicial del sistema.
+* Diseño de la arquitectura general del proyecto.
+* Configuración del entorno Flask.
+* Configuración de la base de datos.
+* Diseño e implementación de los modelos SQLAlchemy.
+* Diseño de relaciones entre entidades.
+* Implementación del sistema de autenticación.
+* Implementación de Login y Logout.
+* Gestión de roles y permisos.
+* Protección de rutas mediante autenticación y autorización.
+* Creación de formularios base.
+* Configuración de Bootstrap y estructura visual principal.
 * Scripts de creación e inicialización de la base de datos.
-* Documentación del proyecto.
-* Coordinación e integración de cambios.
+* Elaboración y mantenimiento de la documentación técnica.
+* Coordinación general del proyecto.
+* Revisión e integración final de los cambios desarrollados por los demás integrantes.
 
-Archivos principales:
+### Archivos principales
 
 ```text
 app/__init__.py
@@ -604,18 +611,33 @@ GUIA_DESARROLLO.md
 
 ## Persona 2
 
-Responsable del módulo de Gestión de Estudiantes.
+### Módulo de Gestión de Estudiantes
 
-Actividades:
+Responsable del desarrollo completo del módulo de estudiantes y de la experiencia de usuario correspondiente al rol Estudiante.
 
-* Listar estudiantes.
-* Crear estudiantes.
-* Editar estudiantes.
-* Eliminar estudiantes.
-* Validar formularios.
-* Integrar vistas del módulo.
+### Actividades
 
-Archivos principales:
+* Implementar el CRUD completo de estudiantes.
+* Crear las rutas necesarias para el módulo.
+* Implementar listado de estudiantes.
+* Implementar creación de estudiantes.
+* Implementar edición de estudiantes.
+* Implementar eliminación de estudiantes.
+* Implementar búsquedas y consultas.
+* Aplicar validaciones de formularios.
+* Mostrar mensajes de éxito y error.
+* Integrar el módulo dentro del menú principal del sistema.
+
+### Rol Estudiante
+
+* Implementar el Dashboard del estudiante.
+* Mostrar información personal del estudiante autenticado.
+* Mostrar las asignaturas inscritas.
+* Mostrar las calificaciones registradas.
+* Restringir accesos a funciones administrativas.
+* Adaptar la navegación según los permisos del rol.
+
+### Archivos principales
 
 ```text
 app/controllers/estudiante_controller.py
@@ -623,24 +645,42 @@ app/controllers/estudiante_controller.py
 app/forms/estudiante_form.py
 
 app/templates/estudiantes/
+├── listar.html
+├── crear.html
+└── editar.html
 ```
 
 ---
 
 ## Persona 3
 
-Responsable del módulo de Gestión de Asignaturas.
+### Módulo de Gestión de Asignaturas
 
-Actividades:
+Responsable del desarrollo completo del módulo de asignaturas y de la experiencia de usuario correspondiente al rol Administrador.
 
-* Listar asignaturas.
-* Crear asignaturas.
-* Editar asignaturas.
-* Eliminar asignaturas.
-* Validar formularios.
-* Integrar vistas del módulo.
+### Actividades
 
-Archivos principales:
+* Implementar el CRUD completo de asignaturas.
+* Crear las rutas necesarias para el módulo.
+* Implementar listado de asignaturas.
+* Implementar creación de asignaturas.
+* Implementar edición de asignaturas.
+* Implementar eliminación de asignaturas.
+* Implementar búsquedas y consultas.
+* Aplicar validaciones de formularios.
+* Mostrar mensajes de éxito y error.
+* Integrar el módulo dentro del menú principal del sistema.
+
+### Rol Administrador
+
+* Implementar el Dashboard administrativo.
+* Mostrar opciones de administración del sistema.
+* Gestionar accesos a módulos administrativos.
+* Implementar menús y vistas exclusivas para administradores.
+* Validar permisos administrativos en las vistas correspondientes.
+* Adaptar la navegación según los permisos del rol.
+
+### Archivos principales
 
 ```text
 app/controllers/asignatura_controller.py
@@ -648,25 +688,42 @@ app/controllers/asignatura_controller.py
 app/forms/asignatura_form.py
 
 app/templates/asignaturas/
+├── listar.html
+├── crear.html
+└── editar.html
 ```
 
 ---
 
 ## Persona 4
 
-Responsable del módulo de Gestión de Calificaciones e integración funcional.
+### Módulo de Gestión de Calificaciones
 
-Actividades:
+Responsable del desarrollo completo del módulo de calificaciones y de la experiencia de usuario correspondiente al rol Docente.
 
-* Registrar calificaciones.
-* Editar calificaciones.
-* Eliminar calificaciones.
+### Actividades
+
+* Implementar el CRUD completo de calificaciones.
+* Crear las rutas necesarias para el módulo.
+* Implementar registro de calificaciones.
+* Implementar edición de calificaciones.
+* Implementar eliminación de calificaciones.
+* Implementar búsquedas y consultas.
 * Gestionar relaciones entre estudiantes y asignaturas.
-* Validar formularios.
-* Realizar pruebas de integración de módulos.
-* Apoyar el registro de blueprints y pruebas finales.
+* Aplicar validaciones de formularios.
+* Mostrar mensajes de éxito y error.
+* Realizar pruebas funcionales del módulo.
 
-Archivos principales:
+### Rol Docente
+
+* Implementar el Dashboard del docente.
+* Mostrar las asignaturas gestionadas por el docente.
+* Permitir el registro y actualización de calificaciones.
+* Mostrar información académica relacionada con estudiantes.
+* Restringir accesos a funciones exclusivas de administración.
+* Adaptar la navegación según los permisos del rol.
+
+### Archivos principales
 
 ```text
 app/controllers/calificacion_controller.py
@@ -674,6 +731,29 @@ app/controllers/calificacion_controller.py
 app/forms/calificacion_form.py
 
 app/templates/calificaciones/
+├── listar.html
+├── crear.html
+└── editar.html
+```
+
+---
+
+## Estrategia de Integración
+
+Cada integrante trabajará en una rama independiente dentro del repositorio Git.
+
+Una vez completadas las funcionalidades asignadas, los cambios serán integrados y revisados antes de incorporarse a la rama principal del proyecto.
+
+La integración final incluirá:
+
+* Verificación de funcionamiento de los tres roles del sistema.
+* Validación de permisos y restricciones de acceso.
+* Validación de operaciones CRUD.
+* Validación de navegación entre módulos.
+* Pruebas generales de funcionamiento.
+* Corrección de errores detectados durante las pruebas.
+* Preparación del proyecto para entrega y defensa.
+
 ```
 
 ---
